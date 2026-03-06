@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnicería Premium - Productos de Calidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo" id="logoLink">
+                <span class="logo-icon">🥩</span>
+                <span class="logo-text">CARNICERÍA PREMIUM</span>
+            </a>
+            
+            <div class="navbar-menu" id="menu">
+                <a href="#" class="nav-link" data-category="vacuno">Vacuno</a>
+                <a href="#" class="nav-link" data-category="ave">Ave</a>
+                <a href="#" class="nav-link" data-category="cerdo">Cerdo</a>
+                <a href="#" class="nav-link" data-category="mariscos">Mariscos</a>
+                <a href="#" class="nav-link" data-category="miscelaneos">Misceláneos</a>
+            </div>
+            <!-- carrito -->
+            <div class="navbar-cart">
+                <button class="cart-btn" id="cartBtn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+            <!-- hamburguesa -->
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="homeSection" class="section active">
+            <div class="hero">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/carousel-1.jpg" alt="Carnes Premium">
+                            <div class="carousel-caption">
+                                <h1>Bienvenido a Carnicería Premium</h1>
+                                <p>La mejor selección de carnes frescas y de calidad</p>
+                                <button class="cta-btn" onclick="showCategory('vacuno')">Explorar Productos</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/carousel-2.jpg" alt="Mariscos Frescos">
+                            <div class="carousel-caption">
+                                <h1>Mariscos del Día</h1>
+                                <p>Pescados y mariscos frescos directamente para ti</p>
+                                <button class="cta-btn" onclick="showCategory('mariscos')">Ver Mariscos</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/carousel-3.jpg" alt="Variedad de Cortes">
+                            <div class="carousel-caption">
+                                <h1>Cortes Premium</h1>
+                                <p>Los mejores cortes para cada ocasión</p>
+                                <button class="cta-btn" onclick="showCategory('vacuno')">Ver Productos</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control prev" id="prevBtn">&lt;</button>
+                    <button class="carousel-control next" id="nextBtn">&gt;</button>
+                    <div class="carousel-indicators" id="carouselIndicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Productos Destacados en Home -->
+            <div class="featured-products">
+                <div class="featured-header">
+                    <h2>Productos Destacados</h2>
+                    <p>Nuestras mejores opciones para ti</p>
+                </div>
+                <div class="featured-grid" id="featuredGrid">
+                    <!-- Productos destacados se cargarán aquí -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="productsSection" class="section">
+            <div class="products-container">
+                <div class="section-header">
+                    <h2 id="categoryTitle">Selecciona una categoría</h2>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Mi Carrito</h2>
+                <button class="close-btn" id="closeCart">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="cart-items">
+                    <!-- Cart items will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                </div>
+                <button class="generate-order-btn" id="generateOrderBtn">Generar Pedido</button>
+                <button class="clear-cart-btn" id="clearCartBtn">Limpiar Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content order-modal">
+            <div class="modal-header">
+                <h2>Resumen del Pedido</h2>
+                <button class="close-btn" id="closeOrder">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="orderContent" class="order-content">
+                    <!-- Order summary will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="print-btn" id="printBtn">Imprimir Pedido</button>
+                <button class="download-btn" id="downloadBtn">Descargar PDF</button>
+                <button class="close-btn-secondary" id="closeOrderBtn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Carnicería Premium. Todos los derechos reservados.</p>
+            <p>Teléfono: +1 (555) 123-4567 | Email: info@carniceriapremium.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
