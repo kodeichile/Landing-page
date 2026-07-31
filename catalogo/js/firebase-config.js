@@ -1,5 +1,18 @@
-import { getApp, getApps, initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
-import { browserLocalPersistence, getAuth, setPersistence } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+import {
+  getApp,
+  getApps,
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+
+import {
+  browserLocalPersistence,
+  getAuth,
+  setPersistence
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+import {
+  getFirestore
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBI-FSFigW-9gEH2qkx18IvN00HEbdaic4",
@@ -11,6 +24,14 @@ export const firebaseConfig = {
   measurementId: "G-59XB1VRJG8"
 };
 
-export const firebaseApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
+export const firebaseApp =
+  getApps().length ? getApp() : initializeApp(firebaseConfig);
+
 export const auth = getAuth(firebaseApp);
-export const authPersistenceReady = setPersistence(auth, browserLocalPersistence).catch(() => null);
+
+export const db = getFirestore(firebaseApp);
+
+export const authPersistenceReady = setPersistence(
+  auth,
+  browserLocalPersistence
+).catch(() => null);
