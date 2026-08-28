@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLUX | Prototipo de trafico urbano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <section class="pitch">
+      <p class="eyebrow">Prototipo ficticio</p>
+      <h1>FLUX</h1>
+      <p>Una app para leer el trafico de la ciudad, predecir mejores horarios y moverse con calma.</p>
+      <div class="pulse-row">
+        <span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <section class="phone" aria-label="Prototipo movil de FLUX">
+      <input class="screen-toggle" type="radio" name="screen" id="welcome" checked>
+      <input class="screen-toggle" type="radio" name="screen" id="home">
+      <input class="screen-toggle" type="radio" name="screen" id="map">
+      <input class="screen-toggle" type="radio" name="screen" id="predictions">
+      <input class="screen-toggle" type="radio" name="screen" id="favorites">
+      <input class="screen-toggle" type="radio" name="screen" id="profile">
+      <input class="screen-toggle" type="radio" name="screen" id="detail">
+
+      <div class="status">
+        <span>9:41</span>
+        <span class="signals">▮▮▮ ◐ ▰</span>
+      </div>
+
+      <article class="screen welcome-screen">
+        <div class="aurora"></div>
+        <div class="brand-mark">F</div>
+        <h2>FLUX</h2>
+        <p>El mejor momento para cada tramite.</p>
+        <div class="city">
+          <i class="pin pin-a"></i>
+          <i class="pin pin-b"></i>
+          <i class="route"></i>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <label class="primary-action" for="home">Comenzar</label>
+        <label class="ghost-action" for="profile">Iniciar sesion</label>
+      </article>
+
+      <article class="screen home-screen app-screen">
+        <header class="topbar">
+          <div>
+            <strong>Hola, Leticia</strong>
+            <small>Que tramite o lugar necesitas hoy?</small>
+          </div>
+          <label class="icon-button bell" for="predictions">!</label>
+        </header>
+        <div class="search">Buscar lugar o tramite</div>
+        <div class="section-title">
+          <b>Lugares cercanos</b>
+          <label for="map">Ver todos</label>
+        </div>
+        <div class="place-list">
+          <label class="place-card" for="detail">
+            <span class="place-icon violet">▣</span>
+            <span><b>Registro Civil</b><small>Los Angeles</small></span>
+            <em class="low">Baja<br><small>0 - 15 min</small></em>
+          </label>
+          <label class="place-card" for="detail">
+            <span class="place-icon amber">⌂</span>
+            <span><b>Municipalidad</b><small>Centro</small></span>
+            <em class="mid">Media<br><small>15 - 30 min</small></em>
+          </label>
+          <label class="place-card" for="detail">
+            <span class="place-icon coral">▥</span>
+            <span><b>Banco Estado</b><small>Av. Alemania</small></span>
+            <em class="high">Alta<br><small>30 - 60 min</small></em>
+          </label>
+          <label class="place-card" for="detail">
+            <span class="place-icon blue">⌁</span>
+            <span><b>Supermercado Lider</b><small>Paillihue</small></span>
+            <em class="mid">Media<br><small>15 - 30 min</small></em>
+          </label>
+        </div>
+      </article>
+
+      <article class="screen map-screen app-screen">
+        <div class="map-search">
+          <span>Buscar en el mapa</span>
+          <button aria-label="Filtros">≡</button>
+        </div>
+        <div class="chips">
+          <span>Todos</span><span>Servicios publicos</span><span>Bancos</span><span>Super</span>
+        </div>
+        <div class="map-art">
+          <i class="road r1"></i><i class="road r2"></i><i class="road r3"></i>
+          <label class="marker red" for="detail">Alta<small>30 - 60 min</small></label>
+          <label class="marker orange m2" for="detail">Media<small>15 - 30 min</small></label>
+          <label class="marker green m3" for="detail">Baja<small>0 - 15 min</small></label>
+          <label class="marker orange m4" for="detail">Media<small>15 - 30 min</small></label>
+          <span class="you"></span>
+        </div>
+      </article>
+
+      <article class="screen predictions-screen app-screen">
+        <h3>Predicciones</h3>
+        <div class="tabs"><span>Hoy</span><span>Manana</span><span>Sab 24</span><span>Dom 25</span></div>
+        <div class="recommend">
+          <b>Mejor horario general hoy</b>
+          <strong>11:00 - 13:00 <small>Menor tiempo de espera</small></strong>
+        </div>
+        <h4>Ocupacion por hora</h4>
+        <div class="chart">
+          <i style="--h:52%;--c:#f59e0b"></i>
+          <i style="--h:66%;--c:#fb7185"></i>
+          <i style="--h:74%;--c:#ef4444"></i>
+          <i style="--h:55%;--c:#f59e0b"></i>
+          <i style="--h:30%;--c:#22c55e"></i>
+          <i style="--h:20%;--c:#16a34a"></i>
+          <i style="--h:17%;--c:#16a34a"></i>
+          <i style="--h:22%;--c:#22c55e"></i>
+          <i style="--h:40%;--c:#f59e0b"></i>
+          <i style="--h:58%;--c:#f59e0b"></i>
+          <i style="--h:70%;--c:#fb7185"></i>
+          <i style="--h:84%;--c:#ef4444"></i>
+        </div>
+        <div class="note">Los horarios recomendados pueden cambiar. Revisa antes de salir.</div>
+      </article>
+
+      <article class="screen favorites-screen app-screen">
+        <h3>Mis favoritos <small>Editar</small></h3>
+        <div class="favorite-card"><b>Registro Civil</b><span>Los Angeles</span><em class="low">0 - 15 min</em><i>★</i></div>
+        <div class="favorite-card"><b>Municipalidad</b><span>Los Angeles</span><em class="mid">15 - 30 min</em><i>★</i></div>
+        <div class="favorite-card"><b>Banco Estado</b><span>Los Angeles</span><em class="high">30 - 60 min</em><i>★</i></div>
+        <div class="favorite-card"><b>Lider Los Angeles</b><span>Supermercado</span><em class="mid">15 - 30 min</em><i>★</i></div>
+      </article>
+
+      <article class="screen profile-screen app-screen">
+        <div class="profile-head">
+          <div class="avatar">LG</div>
+          <h3>Leticia Gonzalez</h3>
+          <p>leticia.g@gmail.com</p>
+        </div>
+        <h4>Preferencias</h4>
+        <div class="menu-list"><span>Tipos de lugares</span><span>Notificaciones</span><span>Horario disponible</span></div>
+        <h4>Mas</h4>
+        <div class="menu-list"><span>Ayuda y soporte</span><span>Terminos y condiciones</span><span class="danger">Cerrar sesion</span></div>
+      </article>
+
+      <article class="screen detail-screen app-screen">
+        <header class="detail-head">
+          <label for="home">‹</label>
+          <div><h3>Registro Civil</h3><p>Los Angeles</p></div>
+          <label for="favorites">☆</label>
+        </header>
+        <div class="occupancy">
+          <small>Ocupacion actual</small>
+          <b>BAJA</b>
+          <span>Tiempo de espera estimado</span>
+          <strong>0 - 15 min</strong>
+        </div>
+        <div class="best-time"><b>Hoy 11:00 - 13:00</b><span>Menor tiempo de espera</span></div>
+        <div class="info">
+          <b>Informacion general</b>
+          <span>Av. Ricardo Vicuna 123, Los Angeles</span>
+          <span>Lun a Vie 08:30 - 14:00</span>
+          <span>600 370 2000</span>
+        </div>
+        <label class="primary-action compact" for="map">Como llegar</label>
+      </article>
+
+      <nav class="nav">
+        <label for="home">⌂<span>Inicio</span></label>
+        <label for="map">⌖<span>Mapa</span></label>
+        <label for="favorites">♡<span>Favoritos</span></label>
+        <label for="profile">♙<span>Perfil</span></label>
+      </nav>
+    </section>
+  </main>
+</body>
+</html>
